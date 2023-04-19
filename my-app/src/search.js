@@ -11,7 +11,7 @@ function Search() {
         axios.get(`https://www.balldontlie.io/api/v1/players/?search=${name}`)
             .then((res) => {
                 console.log(res.data.data);
-                console.log(res.data);
+                // console.log(res.data);
                 setResult(res.data.data);
             })
             .catch((err) => {
@@ -25,23 +25,15 @@ function Search() {
 
     return (
         <>
-            {/* <Card style={{ width: "20rem" }}>
-                <Row>
-                    <Col md={3}>
-                        <img src="neymar.png" id="card-info" />
-                    </Col>
-                    <Col>
-                        <Card.Body>
-                            <Card.Title>{team}</Card.Title>
-                        </Card.Body>
-                    </Col>
-                </Row>
-            </Card> */}
             <div className="d-grip gap-2" id="center-all">
                 <div className="pb-3">
-                    <input id="search" placeholder="NBA player (Ex. Stephen Curry,...)" onChange={(e) => {
-                        setName(e.target.value);
-                    }}></input>
+                    <h1 style={{ fontWeight: "bold" }}>FIND NBA PLAYERS 🏀</h1>
+                    <h4>⛹🏻‍♂️ Perfect site to look up info about your favorite NBA ⛹🏾</h4>
+                    <div className="mt-3">
+                        <input id="search" placeholder="Ex. Stephen Curry..." onChange={(e) => {
+                            setName(e.target.value);
+                        }}></input>
+                    </div>
                 </div>
                 <Button variant="secondary" size="lg" onClick={fetchData}>Search</Button>
             </div>
@@ -51,7 +43,7 @@ function Search() {
                     <Card.Subtitle className="text-muted">{results?.data[0].team.abbreviation}</Card.Subtitle>
                 </Card.Body>
             </Card> */}
-            <CardResult results={results}/>
+            <CardResult results={results} />
         </>
     )
 }

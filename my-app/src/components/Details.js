@@ -19,7 +19,7 @@ function Details() {
     return (
         <>
             <div className="profile-container">
-                <h4>Thông tin cá nhân</h4>
+                <h2 style={{ textAlign: "center" }}>Thông tin cá nhân</h2>
                 <div className="row">
                     {/* <div className="col-md-3 text-center">
                     <img src={avatarUrl} alt="Avatar" className="avatar" />
@@ -77,7 +77,10 @@ function Details() {
                             <p className="form-control profile-form-control">{player?.team.abbreviation}</p>
                         </div>
                         {/* <button className="btn-success btn-save pull-right" onClick={fetchData}>Get</button> */}
-                        <Button variant="primary" onClick={() => navigate(-1)}>Back</Button>
+
+                        <div id="center-all">
+                            <Button variant="primary" onClick={() => navigate(-1)}>Back</Button>
+                        </div>
                     </div>
                 </div>
             </div>
